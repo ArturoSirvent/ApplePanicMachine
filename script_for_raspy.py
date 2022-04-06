@@ -2,6 +2,7 @@
 #y tambien las necesarias para tflite
 
 import numpy as np
+import pygame
 #import tensorflow as tf
 import cv2
 import os
@@ -15,7 +16,7 @@ import time
 
 #! pip install playsound
 #! pip install pygobject #esto no se porque
-from playsound import playsound
+#from playsound import playsound #da problemas en la raspberry
 
 
 # Define VideoStream class to handle streaming of video from webcam in separate processing thread
@@ -114,6 +115,9 @@ resW,resH=640,480
 videostream = VideoStream(resolution=(resW,resH),framerate=30).start()
 time.sleep(1)
 
+#cargamos el sonido
+pygame.mixer.init()
+pygame.mixer.music.load("./datos/nogod_crop.mp3")
 
 
 #añadimos unas lineas para calcular el framerate
@@ -187,7 +191,10 @@ while True:
     elif len(last_detections)!=0:
         veces_repe=sum([palabra==i for i in last_detections])
         if veces_repe>umbral2:
-            playsound("./datos/nogod_crop.mp3",block=False)
+            #playsound("./datos/nogod_crop.mp3",block=False)
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy() == True:
+                continue
             print("NO GOD NO")
             last_detections=[]
 
