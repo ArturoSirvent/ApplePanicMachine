@@ -1,2 +1,4 @@
 # ApplePanicMachine
-It does alert you about surrounding apples, it cannot distinguish between lawful apples or threatening ones. Stay tune for future versions.
+It does alert you about potentially malicious apples in the vicinity. It cannot (yet) distinguish between lawful apples or threatening ones. 
+
+_Stay tune for future versions._
