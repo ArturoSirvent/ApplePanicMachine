@@ -2,7 +2,7 @@
 #y tambien las necesarias para tflite
 
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 import cv2
 import os
 import importlib.util
