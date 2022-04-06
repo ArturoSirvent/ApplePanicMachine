@@ -3,6 +3,7 @@
 
 import numpy as np
 import pygame
+import subprocess
 #import tensorflow as tf
 import cv2
 import os
@@ -116,8 +117,8 @@ videostream = VideoStream(resolution=(resW,resH),framerate=30).start()
 time.sleep(1)
 
 #cargamos el sonido
-pygame.mixer.init()
-pygame.mixer.music.load("./datos/nogod_crop.mp3")
+#pygame.mixer.init()
+#pygame.mixer.music.load("./datos/nogod_crop.mp3")
 
 
 #añadimos unas lineas para calcular el framerate
@@ -192,11 +193,14 @@ while True:
         veces_repe=sum([palabra==i for i in last_detections])
         if veces_repe>umbral2:
             #playsound("./datos/nogod_crop.mp3",block=False)
-            pygame.mixer.music.play()
-            while pygame.mixer.music.get_busy() == True:
-                continue
+            #pygame.mixer.music.play()
+            #while pygame.mixer.music.get_busy() == True:
+            #   continue
+            player = subprocess.Popen(["mplayer", "song.mp3", "-ss", "30"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print("NO GOD NO")
             last_detections=[]
+            #player.stdin.write("q")
+
 
     
   
