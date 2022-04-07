@@ -1,5 +1,7 @@
-<img align="center" width="400" height="400" src="/datos/APMLogo.png">
 
+<p align="center">
+<img width="400" height="400" src="/datos/APMLogo.png">
+</p>
 # ApplePanicMachine
 
 
