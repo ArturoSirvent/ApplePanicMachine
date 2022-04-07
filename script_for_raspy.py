@@ -132,7 +132,7 @@ freq = cv2.getTickFrequency()
 #ejecutamos un audio
 last_detections=[]
 palabra="cell phone"
-umbral1=140
+umbral1=20
 umbral2=umbral1//2
 
 #añadimos un contador para que deje unos pocos hasta la proxima vez
