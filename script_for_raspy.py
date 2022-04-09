@@ -214,7 +214,7 @@ while True:
     t2 = cv2.getTickCount()
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
-
+    umbral1=frame_rate_calc #esto lo metemos para que tome de umbral de detección los frames
     # Press 'q' to quit
     if cv2.waitKey(1) == ord('q'):
         break
