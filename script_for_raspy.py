@@ -202,7 +202,7 @@ while True:
             
             #aqui ponemos la comprobación del area
             if rel_area<(0.4*0.4):
-                player = Popen(["mplayer", "./datos/oh_no.mp3"])
+                player = Popen(["mplayer", "./datos/oh_no2_crop.mp3"])
                 print("oh no")		
             else:
                 player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
