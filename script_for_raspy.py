@@ -122,7 +122,7 @@ time.sleep(1)
 
 
 #añadimos unas lineas para calcular el framerate
-min_conf_threshold=0.7
+min_conf_threshold=0.65
 
 imW, imH = int(resW), int(resH)
 frame_rate_calc = 1
@@ -133,7 +133,7 @@ freq = cv2.getTickFrequency()
 last_detections=[]
 palabra="cell phone"
 umbral1=20
-umbral2=umbral1//2
+umbral2=5
 
 #añadimos un contador para que deje unos pocos hasta la proxima vez
 contar_repe=0 #esto queda pendiente
@@ -224,7 +224,7 @@ while True:
     t2 = cv2.getTickCount()
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
-    umbral1=frame_rate_calc #esto lo metemos para que tome de umbral de detección los frames
+    #umbral1=frame_rate_calc #esto lo metemos para que tome de umbral de detección los frames
     # Press 'q' to quit
     if cv2.waitKey(1) == ord('q'):
         break
