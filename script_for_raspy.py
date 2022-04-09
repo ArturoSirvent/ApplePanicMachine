@@ -226,7 +226,7 @@ while True:
     t2 = cv2.getTickCount()
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
-    umbral1=int(frame_rate_calc*3)
+    umbral1=frame_rate_calc
     umbral2=frame_rate_calc//2
     # Press 'q' to quit
     if cv2.waitKey(1) == ord('q'):
