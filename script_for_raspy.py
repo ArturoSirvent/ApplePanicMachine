@@ -133,7 +133,7 @@ freq = cv2.getTickFrequency()
 last_detections=[]
 palabra="cell phone"
 umbral1=20
-umbral2=5
+umbral2=10
 
 #añadimos un contador para que deje unos pocos hasta la proxima vez
 contar_repe=0 #esto queda pendiente
@@ -203,10 +203,12 @@ while True:
             #aqui ponemos la comprobación del area
             if rel_area<(0.4*0.4):
                 player = Popen(["mplayer", "./datos/oh_no2_crop.mp3"])
-                print("oh no")		
+                print("oh no")
+                time.sleep(1)
             else:
                 player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
                 print("NO GOD NO")
+                time.sleep(1)
             last_detections=[]
             #player.stdin.write("q")
 
@@ -224,7 +226,8 @@ while True:
     t2 = cv2.getTickCount()
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
-    #umbral1=frame_rate_calc #esto lo metemos para que tome de umbral de detección los frames
+    umbral1=int(frame_rate_calc*3)
+    umbral2=frame_rate_calc//2
     # Press 'q' to quit
     if cv2.waitKey(1) == ord('q'):
         break
