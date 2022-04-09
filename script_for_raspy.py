@@ -203,9 +203,10 @@ while True:
             #aqui ponemos la comprobación del area
             if rel_area<(0.8*0.8):
             	player = Popen(["mplayer", "./datos/oh_no.mp3"])
-	    	print("oh no")		
+		print("oh no")
+		
             else:
-	     	player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
+		player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
 	    	print("NO GOD NO")
             last_detections=[]
             #player.stdin.write("q")
