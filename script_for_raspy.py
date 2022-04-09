@@ -204,11 +204,11 @@ while True:
             if rel_area<(0.4*0.4):
                 player = Popen(["mplayer", "./datos/oh_no2_crop.mp3"])
                 print("oh no")
-                time.sleep(1)
+                time.sleep(3)
             else:
                 player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
                 print("NO GOD NO")
-                time.sleep(1)
+                time.sleep(3)
             last_detections=[]
             #player.stdin.write("q")
 
