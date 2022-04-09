@@ -196,7 +196,7 @@ while True:
             #pygame.mixer.music.play()
             #while pygame.mixer.music.get_busy() == True:
             #   continue
-            player = subprocess.Popen(["mplayer", "./datos/nogod_crop.mp3"])
+            player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
             print("NO GOD NO")
             last_detections=[]
             #player.stdin.write("q")
