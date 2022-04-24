@@ -131,7 +131,8 @@ freq = cv2.getTickFrequency()
 #con un buen framerate, vamos a registrar todas las lecturas cada 300 detecciones, si phone esta mas de la mitad,
 #ejecutamos un audio
 last_detections=[]
-palabra="apple"#"cell phone"
+palabra1="apple"#"cell phone"
+palabra2="cell phone"
 umbral1=20
 umbral2=2
 
@@ -193,8 +194,9 @@ while True:
     if len(last_detections)>umbral1:
         last_detections=[]
     elif len(last_detections)!=0:
-        veces_repe=sum([palabra==i for i in last_detections])
-        if veces_repe>umbral2:
+        veces_repe1=sum([palabra1==i for i in last_detections])
+        veces_repe2=sum([palabra2==i for i in last_detections])
+        if veces_repe1>umbral2:
             #playsound("./datos/nogod_crop.mp3",block=False)
             #pygame.mixer.music.play()
             #while pygame.mixer.music.get_busy() == True:
@@ -211,6 +213,13 @@ while True:
                 time.sleep(3)
             last_detections=[]
             #player.stdin.write("q")
+
+	if veces_repe2>umbral2:
+	    player = Popen(["mplayer", "./datos/okey.mp3"])
+	    print("okey")
+	    time.sleep(3)
+            last_detections=[]
+
 
 
 
