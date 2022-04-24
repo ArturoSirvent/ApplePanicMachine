@@ -131,9 +131,9 @@ freq = cv2.getTickFrequency()
 #con un buen framerate, vamos a registrar todas las lecturas cada 300 detecciones, si phone esta mas de la mitad,
 #ejecutamos un audio
 last_detections=[]
-palabra="cell phone"
+palabra="apple"#"cell phone"
 umbral1=20
-umbral2=10
+umbral2=2
 
 #añadimos un contador para que deje unos pocos hasta la proxima vez
 contar_repe=0 #esto queda pendiente
@@ -227,7 +227,7 @@ while True:
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
     umbral1=frame_rate_calc
-    umbral2=frame_rate_calc//2
+    #umbral2=frame_rate_calc//2
     # Press 'q' to quit
     if cv2.waitKey(1) == ord('q'):
         break
