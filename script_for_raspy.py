@@ -214,11 +214,11 @@ while True:
             last_detections=[]
             #player.stdin.write("q")
 
-	if veces_repe2>umbral2:
-	    player = Popen(["mplayer", "./datos/okey.mp3"])
-	    print("okey")
-	    time.sleep(3)
-            last_detections=[]
+    if veces_repe2>umbral2:
+        player = Popen(["mplayer", "./datos/okey.mp3"])
+        print("okey")
+        time.sleep(3)
+        last_detections=[]
 
 
 
