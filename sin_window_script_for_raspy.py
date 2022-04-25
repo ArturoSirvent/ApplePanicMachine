@@ -214,8 +214,8 @@ while True:
             last_detections=[]
             #player.stdin.write("q")
         if veces_repe2>umbral2:
-            player = Popen(["mplayer", "./datos/applause.mp3"])
-            print("applause")
+            player = Popen(["mplayer", "./datos/okey.mp3"])
+            print("okey")
             time.sleep(2)
             last_detections=[]
 
@@ -235,7 +235,7 @@ while True:
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
     umbral1=frame_rate_calc
-    print(frame_rate_calc)
+    #print(frame_rate_calc)
     #umbral2=frame_rate_calc//2
     # Press 'q' to quit
     #if cv2.waitKey(1) == ord('q'):
