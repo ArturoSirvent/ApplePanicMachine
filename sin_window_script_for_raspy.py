@@ -184,9 +184,9 @@ while True:
             #guardamos las ultimas detecciones
             last_detections.append(str(object_name))
             
-            label = '%s: %d%%' % (object_name, int(scores[i]*100)) # Example: 'person: 72%'
-            labelSize, baseLine = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2) # Get font size
-            label_ymin = max(ymin, labelSize[1] + 10) # Make sure not to draw label too close to top of window
+            #label = '%s: %d%%' % (object_name, int(scores[i]*100)) # Example: 'person: 72%'
+            #labelSize, baseLine = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2) # Get font size
+            #label_ymin = max(ymin, labelSize[1] + 10) # Make sure not to draw label too close to top of window
             #cv2.rectangle(frame, (xmin, label_ymin-labelSize[1]-10), (xmin+labelSize[0], label_ymin+baseLine-10), (255, 255, 255), cv2.FILLED) # Draw white box to put label text in
             #cv2.putText(frame, label, (xmin, label_ymin-7), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2) # Draw label text
     #cada 300 frames, comprobamos si una palabra clave esta almenos la mitad de las veces en la lista de
@@ -206,17 +206,17 @@ while True:
             if rel_area<(0.4*0.4):
                 player = Popen(["mplayer", "./datos/oh_no2_crop.mp3"])
                 print("oh no")
-                time.sleep(3)
+                time.sleep(2)
             else:
                 player = Popen(["mplayer", "./datos/nogod_crop.mp3"])
                 print("NO GOD NO")
-                time.sleep(3)
+                time.sleep(2)
             last_detections=[]
             #player.stdin.write("q")
         if veces_repe2>umbral2:
             player = Popen(["mplayer", "./datos/okey.mp3"])
             print("okey")
-            time.sleep(3)
+            time.sleep(2)
             last_detections=[]
 
 
@@ -235,6 +235,7 @@ while True:
     time1 = (t2-t1)/freq
     frame_rate_calc= 1/time1
     umbral1=frame_rate_calc
+    print(frame_rate_calc)
     #umbral2=frame_rate_calc//2
     # Press 'q' to quit
     #if cv2.waitKey(1) == ord('q'):
