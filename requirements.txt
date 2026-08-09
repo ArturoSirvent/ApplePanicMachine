@@ -1,0 +1,5 @@
+numpy
+opencv-python
+matplotlib
+# en la Pi/Coral mejor instalar tflite-runtime como diga coral.ai
+tflite-runtime
