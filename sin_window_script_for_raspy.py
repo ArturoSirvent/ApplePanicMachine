@@ -1,3 +1,12 @@
+"""
+Apple Panic Machine — same detection loop, no display window.
+
+Use on a headless Pi or when you only want audio / console output.
+Set use_TPU=False to run without the Coral accelerator.
+
+Run from repo root:  python sin_window_script_for_raspy.py
+"""
+
 #importamos las librerias para la dereccion
 #y tambien las necesarias para tflite
 

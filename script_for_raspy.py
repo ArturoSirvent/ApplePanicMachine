@@ -1,3 +1,13 @@
+"""
+Apple Panic Machine — live detector with OpenCV preview window.
+
+Raspberry Pi + Coral Edge TPU (optional). Detects COCO objects from the
+webcam; apples and phones trigger sound clips via mplayer.
+
+Run from repo root:  python script_for_raspy.py
+Quit with 'q' in the preview window.
+"""
+
 #importamos las librerias para la dereccion
 #y tambien las necesarias para tflite
 

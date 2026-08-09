@@ -1,0 +1,7 @@
+numpy
+opencv-python
+matplotlib
+# On Raspberry Pi + Coral, install tflite-runtime from the Coral docs
+# instead of (or in addition to) a generic pip wheel:
+#   https://coral.ai/docs/accelerator/get-started/
+tflite-runtime
