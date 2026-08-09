@@ -48,7 +48,7 @@ Without the TPU, set `use_TPU=False` in the scripts and load the non-`edgetpu` m
 
 ## Run
 
-From the repo root, on the Pi:
+On the Pi:
 
 ```bash
 # system deps (Debian/Raspbian-ish)
@@ -67,19 +67,21 @@ python script_for_raspy.py
 Without window (prints + audio only):
 
 ```bash
+python script_for_raspy.py --headless
+# same thing:
 python sin_window_script_for_raspy.py
 ```
 
-Press `q` to quit when the OpenCV window is open.
+Useful flags: `--no-tpu` (CPU model), `--conf 0.65` (confidence). Quit with `q` in the window, or Ctrl+C.
 
-What it reacts to (defaults in the scripts):
+What it reacts to:
 
-| Detection   | Sound                    |
-|-------------|--------------------------|
-| `apple`     | `oh_no2_crop.mp3` or `nogod_crop.mp3` (closer → louder freakout) |
-| `cell phone`| `okey.mp3`               |
+| Detection    | Sound |
+|--------------|-------|
+| `apple`      | `oh_no2_crop.mp3` or `nogod_crop.mp3` (bigger box → bigger freakout) |
+| `cell phone` | `okey.mp3` |
 
-Confidence threshold is ~0.65. Paths assume you run from the repo root (`./modelos`, `./datos`).
+Paths are resolved from the script location, so you can run it from any cwd.
 
 ---
 
@@ -102,6 +104,8 @@ Local PDFs in `slides/`. Online copies:
 
 ## Notes
 
-Code is from an exploratory notebook session moved to `.py` scripts. Comments are mostly in Spanish. It works as a demo, not as a polished product.
+The notebook (`pruebas_deteccion_objetos_tflite.ipynb`) is the original lab write-up — messy on purpose, Spanish comments, kept as history. The `.py` scripts are the runnable demo.
+
+`modelos/own_compilation/` has compile logs and copies of the same TFLite files from the Edge TPU compiler run.
 
 Useful references from when this was written: [Coral docs](https://coral.ai/docs/edgetpu/models-intro/), [EdjeElectronics TFLite on Pi](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi).
